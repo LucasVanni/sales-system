@@ -1,0 +1,26 @@
+services:
+  db:
+    container_name: db
+    image: postgres:13
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: sales
+    ports:
+      - '5432:5432'
+    networks:
+      - sales-network
+
+  dbeaver:
+    image: dbeaver/cloudbeaver
+    container_name: dbeaver
+    ports:
+      - '91:8978'
+    depends_on:
+      - db
+    networks:
+      - sales-network
+
+networks:
+  sales-network:
+    driver: bridge
