@@ -1,4 +1,10 @@
 services:
+  app:
+    container_name: app
+    build:
+      context: .
+      dockerfile: Dockerfile
+
   db:
     container_name: db
     image: postgres:13
