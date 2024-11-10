@@ -4,7 +4,7 @@ import { Product } from './products.entity';
 
 @Injectable()
 export class ProductService {
-  constructor(private entityManager: EntityManager) {}
+  constructor(private readonly entityManager: EntityManager) {}
 
   async findAll() {
     return this.entityManager.find(Product);
