@@ -10,4 +10,4 @@ COPY . .
 
 EXPOSE 3000
 
-CMD ["sh", "-c", "npm run build && npm run start"]
+CMD ["sh", "-c", "if [ \"$MODE\" = \"DEV\" ]; then npm run start:dev; else npm run build && npm run start; fi"]
