@@ -1,9 +1,9 @@
 services:
-  # app:
-  #   container_name: app
-  #   build:
-  #     context: .
-  #     dockerfile: Dockerfile
+  app:
+    container_name: app
+    build:
+      context: .
+      dockerfile: Dockerfile
 
   db:
     container_name: db
